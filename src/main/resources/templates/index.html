@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">		
+		<meta http-equiv="Content-Language" content="en">
+		<meta name="_csrf" th:content="${_csrf.token}"/>
+		<meta name="_csrf_header" th:content="${_csrf.headerName}"/>		
+ 		<title>MyApp</title>
+	</head>
+	<body>
+		<form id="kcdform" name="kcdform" method="POST" th:action="@{/logout}">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+			<p>Welcome <span th:text="${userName}"></span>!</p>
+		</form>
+	</body>
+</html>
